@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+body {
+  font-family: 'Roboto', sans-serif;
+  color: #252525;
+  font-weight: 400;
+  background-color: #131c2d;
+  /* border-bottom: 1.6rem solid #dbd4bb;
+  min-height: 100vh;
+  padding: 3.2rem;
+  padding-bottom: 6rem; */
+}
+
+
+.container {
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+.header {
+  margin-top: 50px;
+}
+
+.header h2 {
+  /* Non-accessible color */
+  color: #eaedf2;
+  /* color: #af8602; */
+
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  position: relative;
+  width: 100%;
+  display: block;
+}
+
+.message {
+  background-color: rgb(255, 181, 42);
+  padding: 30px;
+  text-align: center;
+}
+
+.cars_collection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cars {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2rem;
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+
+
+
+.card {
+  list-style: none;
+  background-color: #f9f9f9;
+  width: 360px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.card img {
+  width: 100%;
+  /* Set the width to 100% to occupy the full width */
+  max-width: 100%;
+  /* Ensure the image doesn't exceed its original size */
+  height: auto;
+  /* Maintain the aspect ratio */
+  border-radius: 8px;
+  /* Optionally apply border-radius */
+}
+
+
+.card_data {
+  flex: 1;
+}
+
+.card_data h3 {
+  font-size: 21px;
+  margin-bottom: 15px;
+}
+
+.card_data p {
+  margin-bottom: 15px;
+  font-size: 14px;
+  color: #5a5656;
+}
+
+.card_data span {
+  color: green;
+}
+
+.icons {
+  display: flex;
+  gap: 2rem;
+  justify-items: center;
+  margin-bottom: 15px;
+}
+
+.icons div {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  gap: 5px;
+}
+
+.checkout {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.checkout h3 {
+  color: #00215e;
+  font-size: 1.4rem;
+}
+
+.checkout h3 span {
+  font-size: 16px;
+  color: rgb(101, 100, 100);
+  font-weight: lighter;
+}
+
+.card_data button {
+  background-color: #00215e;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.card_data button:hover {
+  background-color: #b30000;
+}
+
+.unavailable {
+  color: #888;
+}
+
+.unavailable img {
+  filter: grayscale();
+  opacity: 0.8;
+}
