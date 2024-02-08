@@ -2,6 +2,7 @@ import "./index.css";
 import { IoPersonSharp } from "react-icons/io5";
 import { GiCarDoor } from "react-icons/gi";
 import { BsFuelPumpFill } from "react-icons/bs";
+import { useState } from "react";
 const economyCars = [
   {
     make: "Toyota Corolla Fielder",
@@ -116,6 +117,48 @@ function App() {
   );
 }
 
+const Modal = () => {
+  const [step, setStep] = useState(1);
+  const messages = [
+    "Visit Our Yard 🧍‍♂️",
+    "Choose your desired car 🛻",
+    "Drive Off 💨",
+  ];
+
+  const handlePrevious = () => {
+    if (step > 1) setStep((s) => s - 1);
+  };
+  const handleNext = () => {
+    if (step < 3) setStep((s) => s + 1);
+  };
+  return (
+    <div className="steps">
+      <div className="numbers">
+        <div className={step >= 1 ? "active" : ""}>1</div>
+        <div className={step >= 2 ? "active" : ""}>2</div>
+        <div className={step >= 3 ? "active" : ""}>3</div>
+      </div>
+      <p className="message2">
+        Step {step}: {messages[step - 1]}
+      </p>
+      <div className="buttons">
+        <button
+          style={{ backgroundColor: "#051937", color: "#fff" }}
+          onClick={handlePrevious}
+        >
+          ←
+        </button>
+        <button
+          style={{ backgroundColor: "#051937", color: "#fff" }}
+          onClick={handleNext}
+        >
+          →
+        </button>
+      </div>
+    </div>
+  );
+};
+
 const PopMessage = () => {
   const hour = new Date().getHours();
   console.log(hour);
@@ -136,8 +179,14 @@ const PopMessage = () => {
   );
 };
 const Header = () => {
+  const [isOpen, setIsOpen] = useState(true);
   return (
     <header className="header">
+      <button className="close" onClick={() => setIsOpen((is) => !is)}>
+        {isOpen ? "↑" : "↓"}
+      </button>
+      {isOpen && <Modal />}
+
       <h2>Car MaX Rentals</h2>
     </header>
   );
