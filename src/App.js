@@ -199,7 +199,7 @@ const Cars = () => {
     <main className="cars_collection">
       <ul className="cars">
         {carsNum > 0 ? (
-          economyCars.map((car) => <Car carObj={car} key={car.make} />)
+          cars.map((car) => <Car carObj={car} key={car.make} />)
         ) : (
           <p>No available cars to show</p>
         )}
@@ -233,7 +233,7 @@ const Car = ({ carObj }) => {
           <h3 className={`${carObj.available ? "" : "unavailable"}`}>
             ${carObj.price} <span>/day</span>
           </h3>
-          <button className={`${carObj.available ? "" : "unavailable"}`}>
+          <button className={`${carObj.available ? "" : "unavailablebtn"}`}>
             Rent Now
           </button>
         </div>
